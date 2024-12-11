@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ChessTournament.DAL.Migrations
 {
     /// <inheritdoc />
-    public partial class PremiereConfig : Migration
+    public partial class CategoryTournamentMig : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -21,7 +21,7 @@ namespace ChessTournament.DAL.Migrations
                     Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     PasswordHash = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Gender = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    Gender = table.Column<int>(type: "int", maxLength: 10, nullable: false),
                     ELO = table.Column<int>(type: "int", nullable: false, defaultValue: 1200),
                     Role = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },

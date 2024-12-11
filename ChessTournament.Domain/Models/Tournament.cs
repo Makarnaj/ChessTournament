@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChessTournament.Domain.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -23,14 +24,8 @@ namespace ChessTournament.Domain.Models
         public DateTime RegistrationEndDate { get; set; }
         public DateTime CreationDate { get; set; }
         public DateTime UpdateDate { get; set; }
-        public PlayerTournament PlayerTournament { get; set; }
+        public ICollection<PlayerTournament> PlayerTournaments { get; set; }
     }
 
-    public enum TournamentStatus
-    {
-        WaitingForPlayers,
-        InProgress,
-        Finished
-    }
 }
 

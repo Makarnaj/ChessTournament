@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChessTournament.Domain.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,15 +14,11 @@ namespace ChessTournament.Domain.Models
         public string Email { get; set; }
         public string PasswordHash { get; set; }
         public DateTime BirthDate { get; set; }
-        public string Gender { get; set; }
+        public Gender Gender { get; set; }
         public int ELO { get; set; } = 1200; 
         public PlayerRole Role { get; set; }
-        //public PlayerTournament PlayerTournament { get; set; }
 
-        public enum PlayerRole
-        {
-            ClubPlayer,
-            MisterCheckmate
-        }
+        public ICollection<PlayerTournament> PlayerTournaments { get; set; }
+
     }
 }
