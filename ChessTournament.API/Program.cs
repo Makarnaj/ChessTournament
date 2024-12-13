@@ -44,6 +44,10 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
 builder.Services.AddScoped<IPlayerService , PlayerService>();
+builder.Services.AddScoped<ITournamentRepository, TournamentRepository>();
+builder.Services.AddScoped<ITournamentService , TournamentService>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<ICategoryService , CategoryService>();
 
 var app = builder.Build();
 

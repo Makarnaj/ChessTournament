@@ -36,13 +36,22 @@ namespace ChessTournament.DAL.Repositories
             return player;
         }
 
-        public async Task DeleteAsync(Player player)
+        public async Task<bool> DeleteAsync(int id)
         {
-            _context.Players.Remove(player);
-            await _context.SaveChangesAsync();
+            var entity = await GetByIdAsync(id);
+            if (entity != null)
+            {
+                _dbSet.Remove(entity);
+                await _context.SaveChangesAsync();
+                return true;
+
+            }else
+            {
+                return false;
+            }
         }
 
-        public async Task<IEnumerable<Player>> GetAllAsync()
+        public async Task<List<Player>> GetAllAsync()
         {
             return await _context.Players.ToListAsync();
         }

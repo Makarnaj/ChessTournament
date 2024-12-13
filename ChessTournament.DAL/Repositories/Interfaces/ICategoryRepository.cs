@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace ChessTournament.DAL.Repositories.Interfaces
 {
-    public interface ITournamentRepository : IBaseRepository<Tournament>
+    public interface ICategoryRepository
     {
-
+        public Task<ICollection<Category>> GetByIdsAsync(IEnumerable<int> categoryIds);
     }
 }

@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChessTournament.DAL.Repositories.Interfaces
+namespace ChessTournament.BLL.Interfaces
 {
-    public interface ITournamentRepository : IBaseRepository<Tournament>
+    public interface ICategoryService
     {
-
+        public Task<ICollection<Category>> GetByIdsAsync(ICollection<int> categoryId);
     }
 }
